@@ -17,7 +17,7 @@ class TransitionPage(BasePage):
     @allure.step('Переходим на "Дзен", кликая на логотип "Яндекс"')
     def go_to_dzen_by_yandex_logo(self):
         self.click_to_element(locators.YANDEX_LOGO)
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+        self.change_tab(-1)
 
     @allure.step('Получаем заголовок раздела новости со страницы "Дзен"')
     def get_dzen_news_title(self):

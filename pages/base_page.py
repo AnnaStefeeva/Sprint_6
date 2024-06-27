@@ -42,3 +42,7 @@ class BasePage:
     @allure.step('Кликаем на кнопку принятия cookies')
     def accept_cookies(self):
         self.click_to_element(locators.ACCEPT_COOKIES_BUTTON)
+
+    @allure.step('Переключаемся на другую вкладку')
+    def change_tab(self, tab_number):
+        self.driver.switch_to.window(self.driver.window_handles[tab_number])
