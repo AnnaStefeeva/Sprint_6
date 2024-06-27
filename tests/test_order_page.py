@@ -6,7 +6,7 @@ import data
 import allure
 
 
-@allure.title('Тесты страниц заказа')
+@allure.suite('Тесты страниц заказа')
 class TestOrderPage:
     @allure.title('Создание заказа')
     @allure.description('Кликаем на кнопку «Заказать» вверху страницы, заполняем форму "Для кого самокат", форму '

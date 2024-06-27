@@ -5,7 +5,7 @@ import data
 import allure
 
 
-@allure.title('Тесты переходов по ссылкам в хэдере')
+@allure.suite('Тесты переходов по ссылкам в хэдере')
 class TestTransitionPage:
     @allure.title('Переход на страницу "Самоката" по логотипу "Самоката"')
     @allure.description('Кликаем на кнопку «Заказать» вверху страницы, переходим к форме заказа, '

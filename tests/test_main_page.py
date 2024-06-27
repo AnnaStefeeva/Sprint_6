@@ -4,7 +4,7 @@ import data
 import allure
 
 
-@allure.title('Тесты главной страницы')
+@allure.suite('Тесты главной страницы')
 class TestMainPage:
 
     @allure.title('Проверка соответствия текста ответа вопросу')
