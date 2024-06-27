@@ -1,6 +1,6 @@
 from pages.transitions_page import TransitionPage
 from pages.main_page import MainPage
-import locators.order_page_locators as order_page_locators
+from pages.order_page import OrderPage
 import data
 import allure
 
@@ -15,10 +15,11 @@ class TestTransitionPage:
         main_page.accept_cookies()
         main_page.go_to_order_page()
 
-        page = TransitionPage(driver)
-        header = page.find_element_with_wait(order_page_locators.PERSON_INFO_HEADER)
+        order_page = OrderPage(driver)
+        header = order_page.get_person_info_header()
         assert header.text == data.PERSON_INFO_HEADER
 
+        page = TransitionPage(driver)
         page.go_to_main_page_by_scooter_logo()
         main_page_header_text = page.get_main_page_header_text()
         assert data.HEADER_SCOOTER in main_page_header_text

@@ -43,3 +43,23 @@ class OrderPage(BasePage):
             self.click_to_element(locators.RentForm.BLACK_COLOR_OF_SCOOTER)
         else:
             self.click_to_element(locators.RentForm.GREY_COLOR_OF_SCOOTER)
+
+    @allure.step('Получаем заголовок формы "Про аренду"')
+    def get_rent_info_header(self):
+        return self.find_element_with_wait(locators.RENT_INFO_HEADER)
+
+    @allure.step('Кликаем на кнопку "Заказать" формы "Про аренду"')
+    def click_order_finish_button(self):
+        self.click_to_element(locators.RentForm.ORDER_BUTTON)
+
+    @allure.step('Кликаем на кнопку "Да" в диалоге подтверждения заказа')
+    def confirm_order(self):
+        self.click_to_element(locators.CONFIRMATION_BUTTON)
+
+    @allure.step('Получаем заголовок диалога информации о заказе')
+    def get_order_info_header(self):
+        return self.find_element_with_wait(locators.ORDER_FINISH_HEADER)
+
+    @allure.step('Получаем заголовок формы "Для кого самокат"')
+    def get_person_info_header(self):
+        return self.find_element_with_wait(locators.PERSON_INFO_HEADER)
