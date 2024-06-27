@@ -7,6 +7,10 @@ class MainPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    @allure.step('Переходим к форме заказа')
+    def go_to_order_page(self):
+        self.click_to_element(locators.HEADER_ORDER_BUTTON)
+
     @allure.step('Получаем текст ответа по порядковому номеру вопроса')
     def get_answer_text(self, num):
         locator_question_formatted = self.format_locator(locators.QUESTION, num)

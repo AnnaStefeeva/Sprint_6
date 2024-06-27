@@ -1,4 +1,5 @@
 from pages.transitions_page import TransitionPage
+from pages.main_page import MainPage
 import locators.order_page_locators as order_page_locators
 import data
 import allure
@@ -10,9 +11,11 @@ class TestTransitionPage:
     @allure.description('Кликаем на кнопку «Заказать» вверху страницы, переходим к форме заказа, '
                         'кликаем на логотип "Самоката" и проверяем переход на главную страницу')
     def test_transition_by_scooter_logo(self, driver):
+        main_page = MainPage(driver)
+        main_page.accept_cookies()
+        main_page.go_to_order_page()
+
         page = TransitionPage(driver)
-        page.accept_cookies()
-        page.go_to_order_page()
         header = page.find_element_with_wait(order_page_locators.PERSON_INFO_HEADER)
         assert header.text == data.PERSON_INFO_HEADER
 
