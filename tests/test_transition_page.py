@@ -21,7 +21,8 @@ class TestTransitionPage:
 
         page = TransitionPage(driver)
         page.go_to_main_page_by_scooter_logo()
-        main_page_header_text = page.get_main_page_header_text()
+
+        main_page_header_text = main_page.get_main_header_text()
         assert data.HEADER_SCOOTER in main_page_header_text
 
     @allure.title('Переход на страницу Дзен при нажатии на логотип "Яндекс"')

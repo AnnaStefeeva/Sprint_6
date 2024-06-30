@@ -27,3 +27,7 @@ class MainPage(BasePage):
     def open_person_info_form_by_content_button(self):
         self.scroll_to_element(locators.CONTENT_ORDER_BUTTON)
         self.click_to_element(locators.CONTENT_ORDER_BUTTON)
+
+    @allure.step('Получаем текст заголовка на главной странице')
+    def get_main_header_text(self):
+        return self.find_element_with_wait(locators.HOME_PAGE_HEADER).text
